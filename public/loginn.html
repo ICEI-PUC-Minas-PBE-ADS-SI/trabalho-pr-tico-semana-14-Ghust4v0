@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/loginn.css">
+    <link rel="website icon" type="png" href="Imagens/favicon-32x32.png">
+    <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="coroa" onclick="Main()">
+        <img src="assets/Imagens/image-removebg-preview.png">
+    </div>
+    <div class="container">
+        <div class="buttonsForm">
+            <div class="btnColor"></div>
+                <button id="btnSignin">Sing In</button>
+                <button id="btnSignup">Sing Up</button>
+        </div>
+
+        <form id="singnin">
+            <input type="text" placeholder="Email" id="Email" required/>
+            <i class="fas fa-envelope iEmail"></i>
+            <input type="password" placeholder="Password" id="Password" required/>
+            <i class="fas fa-lock iPassword"></i>
+            <div class="divCheck">
+                <input type="checkbox">
+                <span>Remember Password</span>
+            </div>
+            <button type="submit" onclick="logar(); return false">Sing In</button>
+        </form>
+
+        <form id="singnup">
+            <input type="text" placeholder="Email" required/>
+            <i class="fas fa-envelope iEmail"></i>
+            <input type="password" placeholder="Password" required/>
+            <i class="fas fa-lock iPassword"></i>
+            <input type="password" placeholder="Password" required/>
+            <i class="fas fa-lock iPassword2"></i>
+            <div class="divCheck">
+                <input type="checkbox">
+                <span>Terms</span>
+            </div>
+            <button type="submit">Sing Up</button>
+        </form>
+    </div>
+    <script src="assets/js/loginn.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

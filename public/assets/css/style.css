@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+#carouselExampleCaptions{
+    max-width: 70%;
+}
+
+#carouselExampleCaptions img{
+    height: 700px;
+    width: 100%;
+}
+
+#carouselExampleCaptions:hover{
+    cursor: pointer;
+}
+
+header{
+    background-color: steelblue;
+    width: 100%;
+}
+
+#Main:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+article img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.acoes{
+    display: block;
+    position: absolute; 
+    top: 5%; right: 0%; 
+    transform: translate(-10%, -50%); 
+}
+
+header button{
+    background: #ffffff;
+    color: black;
+    border-radius: 30px;
+    width: 100px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.post img{
+    width: 100%;
+    height: 350px;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+footer img{
+    border: black;
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.inform{
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    gap: 1px;
+    width: 30%;   
+}
+
+.curso{
+    width: 83%;
+}
+
+.sobreosite{
+    font-size: 19.8px;
+    display: flex;
+    float: right;
+}
+
+video{
+    max-width: 100%;
+    height: 200px;
+}
+
+#tela{
+    max-width: 100%;
+}
+
+#tela img{
+    width: 30%;
+    display: flex;
+}
+
+.Direção{
+    font-size: 10px;
+    display: block;
+    position: absolute; 
+    top: 6%; right: 49%; 
+    transform: translate(-10%, -50%)
+}
+
+@media screen and (max-width: 480px) {
+
+    .sinop{
+        font-size: 13px;
+    } 
+ 
+ }

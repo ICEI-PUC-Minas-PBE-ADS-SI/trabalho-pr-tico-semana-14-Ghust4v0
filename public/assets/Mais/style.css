@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: gainsboro;
+}
+
+.curriculo{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: white;
+    margin: 50px;
+    box-shadow: 0 35px 55px rgba(0,0,0,0.1);
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg, #20B2AA, #00BFFF);
+    padding: 50px;
+}
+
+h2{
+    line-height: 0.7em;
+    color: white;
+}
+
+span{
+    font-size: 0.5em;
+    font-weight: 300;
+}
+
+.informacoes{
+    position: relative;
+    display: grid;
+    gap: 40px;
+    width: 100%;
+    grid-template-columns: 2fr 3fr;
+    margin-top: 5px;
+}
+
+.informacoes .foto{
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.informacoes .foto .imagem{
+    width: 100%;
+    height: 100%;
+}
+
+aside{
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    padding: 50px;
+}
+
+ul .Linkedin{
+    list-style-image: url('linkedin.png');
+}
+
+ul .email{
+    list-style-image: url('Gmail.png');
+}
+
+ul .website{
+    list-style-image: url('Website_gambar-removebg-preview\ \(1\).png');
+}
+
+ul .whatsapp{
+    list-style-image: url('WhatsApp.svg.png');
+}
+
+ul .Telefone{
+    list-style-image: url('126341.png');
+}
+
+main{
+    display: block;
+    position: absolute; 
+    top: 55%; left: 41%; 
+    transform: translate(-10%, -50%); 
+}
+
+.cont{
+    position: absolute;
+    left: 120px;
+}

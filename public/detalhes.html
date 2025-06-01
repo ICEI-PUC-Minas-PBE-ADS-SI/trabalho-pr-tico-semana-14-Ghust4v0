@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrição</title>
+    <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!--Cabeçalho-->
+    <header>
+
+        <div class="logo">
+            <img src="assets/Imagens/image-removebg-preview.png" width="100px" height="100px" onclick="Main()" id="Main">
+        </div>
+
+    </header>
+
+    <div id="tela">
+
+    </div>
+
+    <script>
+     const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const container = document.getElementById('tela');
+
+    fetch(`http://localhost:3000/filmes/${id}`)
+        .then(response => response.json())
+        .then(filme => {
+            container.innerHTML = `
+                <center>
+                    <h1>${filme.nome}</h1>
+                    <p><img src="${filme.imagem}"></p>
+                </center>
+                <div class="sinop">
+                    <p><b>Sinopse:</b> ${filme.descrição}</p>
+                </div>
+                <center>
+                    <video src="${filme.video}" controls></video><br>
+                </center>`;
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o JSON:', error);
+            container.innerHTML = "<p>Erro ao carregar os dados do filme.</p>";
+        });
+</script>
+</body>
+
+</html>

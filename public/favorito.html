@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/js/app2.js"></script>
+    <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Favoritos</title>
+</head>
+
+<body>
+    <!--Cabeçalho-->
+    <header>
+
+        <div class="logo">
+            <img src="assets/Imagens/image-removebg-preview.png" width="100px" height="100px" onclick="Main()"
+                id="Main">
+                
+        </div>
+
+    </header>
+
+
+    <br>
+
+    <center><h1>Filmes avaliados por você!</h1></center>
+
+    <br>
+
+    <center>
+        <form>
+        <div class="nome">
+            <label class="nomes"><h3>Qual filme quer avaliar</h3></label>
+              <select name="" id="nome">
+                    <option value="1">Ainda Estou Aqui</option>
+                    <option value="2">Conclave</option>
+                    <option value="3">Central do Brasil</option>
+                    <option value="4">Vingadores Ultimato</option>
+                    <option value="5">Nós</option>
+                    <option value="6">A Culpa é das Estrelas</option>
+                    <option value="7">Homem Aranha no Aranhaverso</option>
+                    <option value="8">Auto da Compadecida</option>
+                </select>
+        </div>
+        <div class="classe">
+            <label class="classes"><h3>Classificação do Filme</h3></label>
+              <select name="" id="classe">
+                    <option value="1">Horrivel</option>
+                    <option value="2">Ruim</option>
+                    <option value="3">Médio</option>
+                    <option value="4">Bom</option>
+                    <option value="5">Ótimo</option>
+                </select>
+        </div>
+        <div class="post">
+            <button style="background-color: chartreuse;" onclick="enviar()">ADD</button>
+        </div>
+    </form>
+    </center>
+
+    <br>
+
+    <center>
+        <table>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Filme</th>
+                        <th>Bom ou ruim</th>
+                    </tr>
+                </thead>
+                <tbody id="listafilmes"></tbody>
+            </table>
+    </center>
+
+    <script>
+        const container = document.getElementById('listafilmes');
+
+        fetch('http://localhost:3000/favoritos')
+            .then(response => response.json())
+            .then(favoritos => {
+                container.innerHTML = '';
+                favoritos.forEach(filme => {
+                    container.innerHTML += `
+                        <tr>
+                            <td><img src="${filme.foto}" width="100"></td>
+                            <td>${filme.titulo}</td>
+                            <td>${filme.clasificação}</td>
+                            <td><button onclick="deleta(${filme.id})">Excluir</button> <button onclick="put(${filme.id})">Alterar</button></td>
+                        </tr>`;
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o JSON:', error);
+                container.innerHTML = "<tr><td colspan='3'>Erro ao carregar os dados do filme.</td></tr>";
+            });
+    </script>
+</body>
+
+</html>
