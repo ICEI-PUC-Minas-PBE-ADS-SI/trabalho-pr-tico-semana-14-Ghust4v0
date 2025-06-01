@@ -37,7 +37,7 @@
     },
     {
       "id": 6,
-      "nome": "A culpa é das estrelas",
+      "nome": "A Culpa é das Estrelas",
       "descrição": "Diagnosticada com câncer, a adolescente Hazel Grace Lancaster (Shailene Woodley) se mantém viva graças a uma droga experimental. Após passar anos lutando com a doença, ela é forçada pelos pais a participar de um grupo de apoio cristão. Lá, conhece Augustus Waters (Ansel Elgort), um rapaz que também sofre com câncer. Os dois possuem visões muito diferentes de suas doenças: Hazel preocupa-se apenas com a dor que poderá causar aos outros, já Augustus sonha em deixar a sua própria marca no mundo. Apesar das diferenças, eles se apaixonam. Juntos, atravessam os principais conflitos da adolescência e do primeiro amor, enquanto lutam para se manter otimistas e fortes um para o outro.",
       "imagem": "assets/Imagens/culpadasestrelas.jpg",
       "video": "assets/video/culpadasestrelas.mp4"
@@ -51,11 +51,72 @@
     },
     {
       "id": 8,
-      "nome": "O auto da Compadecida",
+      "nome": "O Auto da Compadecida",
       "descrição": "As aventuras dos nordestinos João Grilo (Matheus Natchergaele), um sertanejo pobre e mentiroso, e Chicó (Selton Mello), o mais covarde dos homens. Ambos lutam pelo pão de cada dia e atravessam por vários episódios enganando a todos do pequeno vilarejo de Taperoá, no sertão da Paraíba. A salvação da dupla acontece com a aparição da Nossa Senhora (Fernanda Montenegro). Adaptação da obra de Ariano Suassuna.",
       "imagem": "assets/Imagens/O_auto_da_compadecida.jpg",
       "video": "assets/video/autodacompadecida.mp4"
     }
   ],
-  "favoritos": []
+  "favoritos": [
+    {
+      "titulo": "Ainda Estou Aqui",
+      "clasificação": "Horrivel",
+      "foto": "/assets/Imagens/aindaesotuaqui.jpg",
+      "id": 3
+    },
+    {
+      "titulo": "Conclave",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/conclave.png",
+      "id": 4
+    },
+    {
+      "titulo": "Central do Brasil",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/centraldobrasil.jpg",
+      "id": 5
+    },
+    {
+      "titulo": "Vingadores Ultimato",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/ultimato.jpg",
+      "id": 6
+    },
+    {
+      "titulo": "Nós",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/nós.png",
+      "id": 7
+    },
+    {
+      "titulo": "A Culpa é das Estrelas",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/culpadasestrelas.jpg",
+      "id": 8
+    },
+    {
+      "titulo": "Homem Aranha no Aranhaverso",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/homemaranha.jpg",
+      "id": 9
+    },
+    {
+      "titulo": "O Auto da Compadecida",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/O_auto_da_compadecida.jpg",
+      "id": 10
+    },
+    {
+      "titulo": "O Auto da Compadecida",
+      "clasificação": "Horrivel",
+      "foto": "assets/Imagens/O_auto_da_compadecida.jpg",
+      "id": 11
+    },
+    {
+      "titulo": "O Auto da Compadecida",
+      "clasificação": "Médio",
+      "foto": "assets/Imagens/O_auto_da_compadecida.jpg",
+      "id": 12
+    }
+  ]
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados sobre os filmes</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/app.js"></script>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        header {
+            background-color: steelblue;
+            width: 100%;
+        }
+
+        #Main:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    </style>
+
+    <header>
+
+        <div class="logo">
+            <img src="assets/Imagens/image-removebg-preview.png" width="100px" height="100px" onclick="Main()"
+                id="Main">
+        </div>
+
+    </header>
+
+    <h1>Gráfico sobre a classificação dos filmes</h1>
+    <canvas id="divBarChart"></canvas>
+    <script>
+        async function carregarDadosDeClassificacao() {
+            try {
+                const [resFilmes, resFavoritos] = await Promise.all([
+                    fetch("http://localhost:3000/filmes"),
+                    fetch("http://localhost:3000/favoritos")
+                ]);
+
+                const filmes = await resFilmes.json();
+                const favoritos = await resFavoritos.json();
+
+                // Classificações possíveis
+                const classificacoes = ["Horrivel", "Ruim", "Médio", "Bom", "Ótimo"];
+
+                // Inicializa estrutura: { "nome do filme": {Horrivel: 0, Ruim: 0, ...} }
+                const votosPorFilme = {};
+                filmes.forEach(filme => {
+                    votosPorFilme[filme.nome] = {};
+                    classificacoes.forEach(classe => votosPorFilme[filme.nome][classe] = 0);
+                });
+
+                // Conta as classificações por filme
+                favoritos.forEach(fav => {
+                    if (votosPorFilme[fav.titulo] && votosPorFilme[fav.titulo][fav.clasificação] !== undefined) {
+                        votosPorFilme[fav.titulo][fav.clasificação]++;
+                    }
+                });
+
+                // Prepara dados para o gráfico
+                const labels = Object.keys(votosPorFilme);
+                const datasets = classificacoes.map((classe, i) => ({
+                    label: classe,
+                    data: labels.map(filme => votosPorFilme[filme][classe]),
+                    backgroundColor: [
+                        "#8B0000", "#DC143C", "#FFD700", "#32CD32", "#006400"
+                    ][i],
+                    stack: 'Stack 0'
+                }));
+
+                const ctx = document.getElementById('divBarChart');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Votos por Classificação e Filme'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                stacked: true
+                            },
+                            y: {
+                                stacked: true,
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+            } catch (error) {
+                console.error("Erro ao carregar dados:", error);
+            }
+        }
+
+        window.onload = () => {
+            carregarDadosDeClassificacao();
+        }
+    </script>
+
+</body>
+
+</html>

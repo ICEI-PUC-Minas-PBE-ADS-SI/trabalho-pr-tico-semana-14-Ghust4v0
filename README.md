@@ -16,8 +16,8 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 **Print da tela com a implementação**
 
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
+<< Utilizado o Chart.js para declarar a quantidade de cada avaliação para os diferentes filmes>>
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+<<![alt text](dados1.png)>>
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+<<![alt text](dados2.png)>>
